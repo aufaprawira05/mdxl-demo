@@ -1,6 +1,6 @@
 // Service worker sederhana: simpan file aplikasi agar cepat dibuka.
 // Data (Supabase) selalu diambil langsung dari internet.
-const CACHE = 'mdxl-demo-v1';
+const CACHE = 'mdxl-demo-v2';
 const SHELL = ['./', './index.html', './css/app.css', './icon.svg', './manifest.webmanifest',
   './js/main.js', './js/ui.js', './js/db.js', './js/camera.js', './js/activities.js', './js/visits.js', './js/config.js'];
 

@@ -137,6 +137,15 @@ function renderProfile() {
   };
 }
 
+// ---------- Kunci zoom (khusus iPhone, yang mengabaikan pengaturan viewport) ----------
+['gesturestart', 'gesturechange', 'gestureend'].forEach((ev) => document.addEventListener(ev, (e) => e.preventDefault(), { passive: false }));
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+  const now = Date.now();
+  if (now - lastTouchEnd < 300 && !e.target.closest('input, textarea, select')) e.preventDefault();
+  lastTouchEnd = now;
+}, { passive: false });
+
 // ---------- Mulai ----------
 async function boot() {
   if (!configured) {
